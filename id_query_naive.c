@@ -15,7 +15,7 @@ struct naive_data {
 };
 
 struct naive_data* mk_naive(struct record* rs, int n) {
-  // TODO
+  // TODO s
   assert(0);
 }
 
