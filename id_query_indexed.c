@@ -63,19 +63,9 @@ void free_indexed(struct indexed_data* data) {
 }
 
 const struct record* lookup_indexed(struct indexed_data *data, int64_t needle) {
-    int left = 0;
-    int right = data->n - 1;
-    
-    // Binary search
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
-        if (data->irs[mid].osm_id == needle) {
-            return data->irs[mid].record;
-        }
-        if (data->irs[mid].osm_id < needle) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
+    for (int i = 0; i < data->n; ++i) {
+        if (data->irs[i].osm_id == needle) {
+            return data->irs[i].record;
         }
     }
     return NULL;
