@@ -10,7 +10,7 @@
 #include "id_query.h"
 
 struct binsort_data {
-  struct record *rs;
+  struct record *irs;
   int n;
 };
 
@@ -22,12 +22,12 @@ static int compare_records(const void* a, const void* b) {
     return 0;
 }
 
-struct binsort_data *mk_binsort(struct record *rs, int n)
+struct binsort_data *mk_binsort(struct record *irs, int n)
 {
     struct binsort_data *data = malloc(sizeof(struct binsort_data));
     if (!data)
         return NULL;
-    data->rs = rs;
+    data->irs = irs;
     data->n = n;
     
     // Sort the records array by osm_id
