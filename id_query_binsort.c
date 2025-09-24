@@ -31,7 +31,7 @@ struct binsort_data *mk_binsort(struct record *irs, int n)
     data->n = n;
     
     // Sort the records array by osm_id
-    qsort(data->rs, n, sizeof(struct record), compare_records);
+    qsort(data->irs, n, sizeof(struct record), compare_records);
     
     return data;
 }
