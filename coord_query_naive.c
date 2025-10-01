@@ -19,6 +19,20 @@ struct naive_data
   int n;             // number of records
 };
 
+struct naive_data* mk_naive(struct record* rs, int n) 
+{
+  struct naive_data *data = malloc(sizeof(struct naive_data));
+  if (!data)
+    return NULL;
+  data->rs = rs;
+  data->n = n;
+  return data;
+}
+
+void free_naive(struct naive_data* data) {
+{
+  free(data);
+}
 // Creates and returns a naive_data struct wrapping the array of records
 struct naive_data *mk_naive(struct record *rs, int n)
 {
